@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 export const calc = (expression) => {
   if (typeof expression !== "string") {
     return null;
@@ -8,7 +9,7 @@ export const calc = (expression) => {
 
   switch (operation) {
     case "+":
-     (result = +a + +b);
+      result = +a + +b;
       break;
     case "-":
       result = +a - +b;
@@ -23,3 +24,5 @@ export const calc = (expression) => {
 
   return `${expression} = ${result}`;
 };
+
+console.log(calc("1 + 2"));
