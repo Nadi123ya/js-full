@@ -47,7 +47,9 @@ const onSeatSelect = (event) => {
     return;
   }
   const seatNumber = event.target.dataset.seatNumber;
+  console.log(seatNumber);
   const lineNumber = event.target.closest(".sector__line").dataset.lineNumber;
+  console.log(lineNumber);
   const sectorNumber = event.target.closest(".sector").dataset.sectorNumber;
 
   const selectedSeatElem = document.querySelector(".board__selected-seat");
