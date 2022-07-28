@@ -1,0 +1,25 @@
+.page{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size:30px;
+}
+
+.counter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-grow: 1;
+}
+.counter__button{
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    font-size:30px;
+    background-color: #ffff;
+    border-radius: 20%;
+  
+}

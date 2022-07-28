@@ -21,7 +21,7 @@ const createListItem = ({ text, done, id }) => {
 };
 
 export const renderTasks = () => {
-  const tasksList = getItem("tasks") || [];
+  const tasksList = getItem("tasksList") || [];
   listElem.innerHTML = "";
   const tasksElems = tasksList.slice().sort(compareTasks).map(createListItem);
 

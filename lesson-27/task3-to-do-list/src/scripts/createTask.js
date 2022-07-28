@@ -16,7 +16,7 @@ export const createNewTask = () => {
     return;
   }
   taskTitleInputElem.value = "";
-  const tasksList = getItem("tasks") || [];
+  const tasksList = getItem("tasksList") || [];
   console.log(tasksList);
   const newTasksList = tasksList.concat({
     text,
@@ -25,7 +25,7 @@ export const createNewTask = () => {
   });
   console.log(newTasksList);
 
-  setItem("tasks", newTasksList);
+  setItem("tasksList", newTasksList);
 
   renderTasks();
 };

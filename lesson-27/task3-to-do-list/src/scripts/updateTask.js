@@ -7,7 +7,7 @@ export const handleToggleTask = (event) => {
   if (!isCheckBox) {
     return;
   }
-  const tasksList = getItem("tasks");
+  const tasksList = getItem("tasksList");
   console.log(tasksList);
   const taskData = tasksList.find(
     (task) => task.id === +event.target.dataset.id
@@ -21,6 +21,6 @@ export const handleToggleTask = (event) => {
 
   const newTasksList = newTaskdata.concat(cnangedTask);
 
-  setItem("tasks", newTasksList);
+  setItem("tasksList", newTasksList);
   renderTasks();
 };
