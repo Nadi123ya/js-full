@@ -83,6 +83,7 @@ const createNewTask = () => {
     id: getRandomId(1, 100),
   });
   renderTasks(tasks);
+  console.log(tasks);
 };
 
 findCreateButton.addEventListener("click", createNewTask);

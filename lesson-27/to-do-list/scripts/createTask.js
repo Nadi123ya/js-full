@@ -1,7 +1,6 @@
 import { renderTasks } from "../scripts/render.js";
 import { setItem, getItem } from "../scripts/storage.js";
 
-// const findCreateButton = document.querySelector(".create-task-btn");
 function getRandomId(min, max) {
   // eslint-disable-next-line no-param-reassign
   min = Math.ceil(min);
@@ -19,15 +18,15 @@ export const createNewTask = () => {
   taskTitleInputElem.value = "";
   const tasksList = getItem("tasks") || [];
   console.log(tasksList);
-  const newTasksList = tasksList.push({
+  const newTasksList = tasksList.concat({
     text,
     done: false,
     id: getRandomId(1, 100),
   });
+  console.log(newTasksList);
 
   setItem("tasks", newTasksList);
 
   renderTasks();
 };
 
-// findCreateButton.addEventListener("click", createNewTask);
