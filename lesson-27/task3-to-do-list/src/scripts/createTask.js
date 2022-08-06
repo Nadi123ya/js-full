@@ -18,14 +18,13 @@ export const createNewTask = () => {
   taskTitleInputElem.value = "";
   const tasksList = getItem("tasksList") || [];
   console.log(tasksList);
-  const newTasksList = tasksList.concat({
+  const newTasksList = tasksList.push({
     text,
     done: false,
     id: getRandomId(1, 100),
   });
-  console.log(newTasksList);
 
-  setItem("tasksList", newTasksList);
+  setItem("tasksList", tasksList);
 
   renderTasks();
 };
