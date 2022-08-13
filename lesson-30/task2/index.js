@@ -1,21 +1,34 @@
-import { addImage } from "../task2/addImage.js";
+/* здесь мы создаем промис, который резолвит объект { name: 'Tom', age: 17 } через 1 секунду */
+const userDataPromise = new Promise((resolve) => {
+  setTimeout(() => {
+    resolve({ name: "Tom", age: 17 });
+  }, 1000);
+});
 
-export const addImageV2 = (url) =>
-  new Promise((resolve, reject) => {
-    const cb = (error, data) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(data);
-      }
-    };
-    addImage(url, cb);
-  });
+/*
+ * Выведите в консоль переменную userDataPromise
+ * Ответьте себе на вопрос, какой тип данных имеет переменная userDataPromise?
+ * data type: object;
+ */
 
-// examples
+console.log(userDataPromise);
 
-addImageV2(
-  "https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg"
-)
-  .then((data) => console.log(data)) // ==> { width: 200, height: 100 }
-  .catch((error) => console.log(error)); // ==> 'Image load failed'
+/*
+ * Выведите в консоль переменную userData в обработчике промиса
+ * Ответьте себе на вопрос, что находится в переменной userData?
+ * Object from resolve
+ */
+userDataPromise.then(function onSuccess(userData) {
+  console.log(userData);
+});
+
+/*
+ * подпишитесь на успешное выполнение промиса userDataPromise
+ * используйте метод .then
+ * в обработчике промиса (ф-ция внутри .then() ) выведите в консоль строку 'My name is Tom. I am 17 years old'
+ * Tom и 17 достаньте с данных, которые приходят в ф-цию onSuccess
+ */
+
+userDataPromise.then(function onSuccess(userData) {
+  console.log(`My name is ${userData.name}. I am ${userData.age} years old`);
+});
