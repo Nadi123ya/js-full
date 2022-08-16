@@ -31,7 +31,6 @@ export const createNewTask = () => {
       setItem("tasksList", newTasksList);
       renderTasks();
     });
-
 };
 
 // 1. Prepare the data

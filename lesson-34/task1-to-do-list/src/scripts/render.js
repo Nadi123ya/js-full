@@ -4,8 +4,6 @@ const listElem = document.querySelector(".list");
 
 const compareTasks = (a, b) => a.done - b.done;
 
-// list__item-checkbox
-// line15
 
 const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement("li");
