@@ -5,7 +5,7 @@ import { getTasksList, updateTask, deleteTask } from "./taskGateway.js";
 export const handleToggleTask = (event) => {
   const isCheckBox = event.target.classList.contains("list-item__checkbox");
   const taskId = event.target.dataset.id;
-
+  console.log(taskId);
   if (!isCheckBox) {
     return;
   }
@@ -36,7 +36,8 @@ export const onDelete = (event) => {
   if (!isDeleteButton) {
     return;
   }
-  const taskId = event.target.dataset.id;
+  const taskId = event.target.closest(".list-item").dataset.id;
+  console.log(taskId);
   deleteTask(taskId)
     .then(() => getTasksList())
     .then((newTasksList) => {
