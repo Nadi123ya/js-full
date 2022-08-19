@@ -1,9 +1,8 @@
-import { getItem } from "../scripts/storage.js";
+import { getTasksList } from "./taskGateway.js";
 
 const listElem = document.querySelector(".list");
 
 const compareTasks = (a, b) => a.done - b.done;
-
 
 const createListItem = ({ text, done, id }) => {
   const listItemElem = document.createElement("li");
@@ -30,11 +29,20 @@ const createListItem = ({ text, done, id }) => {
 };
 
 export const renderTasks = () => {
-  const tasksList = getItem("tasksList") || [];
-  listElem.innerHTML = "";
-  const tasksElems = tasksList.slice().sort(compareTasks).map(createListItem);
-
-  listElem.append(...tasksElems);
+  getTasksList().then((tasksList) => {
+    listElem.innerHTML = "";
+    const tasksElems = tasksList.slice().sort(compareTasks).map(createListItem);
+    listElem.append(...tasksElems);
+  });
 };
-
 renderTasks();
+
+// const tasksList = (listElem.innerHTML = "");
+// const tasksElems = tasksList.slice().sort(compareTasks).map(createListItem);
+// listElem.append(...tasksElems);
+
+// 1. Prepare the data
+// 2. Add data to database
+// 3. Read new data from the server
+// 4. Save new data to front-end storage
+// 5. Update UI based on new data

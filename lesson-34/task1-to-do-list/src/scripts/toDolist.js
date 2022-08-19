@@ -1,5 +1,4 @@
 import { createNewTask } from "../scripts/createTask.js";
-// import { handleToggleTask } from "../scripts/updateTask.js";
 import { onListClick } from "../scripts/updateTask.js";
 
 export const initTodoListHandlers = () => {
