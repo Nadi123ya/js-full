@@ -1,6 +1,6 @@
-import { fetchUserData, fetchRepositories } from "../src/gateways.js";
-import { renderUserData } from "../src/user.js";
-import { renderRepos, cleanReposList } from "../src/repos.js";
+import { fetchUserData, fetchRepositories } from "./gateways.js";
+import { renderUserData } from "./user.js";
+import { renderRepos, cleanReposList } from "./repos.js";
 import { showSpinner, hideSpinner } from "./spinner.js";
 
 const defaultUser = {
